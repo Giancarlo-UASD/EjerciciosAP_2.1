@@ -4,19 +4,19 @@ public class Producto{
     private double precio;
     private int stock;
 
-    public double precio{
+    public double Precio{
         get { return precio; }
         set {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentNullException();
+            if (value < 0)
+                throw new InvalidOperationException("El precio debe ser no Negativo.");
             precio = value; 
         }
     }
-    public int stock{
+    public int Stock{
         get { return stock; }
         set {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentNullException();
+            if (value < 0)
+                throw new InvalidOperationException("El valor del Stock debe ser no Negativo.");
             stock = value; 
         }
     }
